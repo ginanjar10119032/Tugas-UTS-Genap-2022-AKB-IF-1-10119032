@@ -6,15 +6,19 @@ import androidx.lifecycle.ViewModel;
 
 public class HomeViewModel extends ViewModel {
 
-    private final MutableLiveData<String> mTextNim;
+    private final MutableLiveData<String> mText;
 
     public HomeViewModel() {
-        mTextNim = new MutableLiveData<>();
+        String nim = ("NIM : 10119032\n\n");
+        String nama = ("Nama : Ginanjar Tubagus Gumilar\n\n");
+        String kelas = ("Kelas : IF-1");
 
-        mTextNim.setValue("NIM : 10119032");
+        mText = new MutableLiveData<>();
+        mText.setValue(nim+nama+kelas);
+
     }
 
     public LiveData<String> getText() {
-        return mTextNim;
+        return mText;
     }
 }

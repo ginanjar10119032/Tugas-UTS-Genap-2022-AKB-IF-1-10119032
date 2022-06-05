@@ -16,9 +16,11 @@ public class SplashScreen extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        //menghilangkan ActionBar
-        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        try
+        {
+            this.getSupportActionBar().hide();
+        }
+        catch (NullPointerException e){};
         setContentView(R.layout.activity_splash_screen);
 
         final Handler handler = new Handler();
@@ -28,6 +30,6 @@ public class SplashScreen extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
                 finish();
             }
-        }, 2000L); //2000 L = 2 detik
+        }, 3000L); //3000 L = 3 detik
     }
 }
