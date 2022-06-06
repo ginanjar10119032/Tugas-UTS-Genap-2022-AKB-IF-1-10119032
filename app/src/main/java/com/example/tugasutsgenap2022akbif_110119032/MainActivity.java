@@ -1,5 +1,9 @@
 package com.example.tugasutsgenap2022akbif_110119032;
 
+//NIM     : 10119032
+//NAMA    : GINANJAR TUBAGUS GUMILAR
+//KELAS   : IF-1
+
 import android.os.Bundle;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;

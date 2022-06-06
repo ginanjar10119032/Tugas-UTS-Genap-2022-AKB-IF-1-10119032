@@ -1,5 +1,10 @@
 package com.example.tugasutsgenap2022akbif_110119032.ui.home;
 
+//NIM     : 10119032
+//NAMA    : GINANJAR TUBAGUS GUMILAR
+//KELAS   : IF-1
+
+
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
