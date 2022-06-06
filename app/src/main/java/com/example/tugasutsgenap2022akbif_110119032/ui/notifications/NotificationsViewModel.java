@@ -13,12 +13,13 @@ public class NotificationsViewModel extends ViewModel {
     private final MutableLiveData<String> mText;
 
     public NotificationsViewModel() {
-        String nim = ("NIM : 10119032\n\n");
-        String nama = ("Nama : Ginanjar Tubagus Gumilar\n\n");
-        String kelas = ("Kelas : IF-1");
+        String nama = ("Aplikasi Catatan Harian\n");
+        String versi = ("Versi 1.0\n");
+        String made = ("Dibuat oleh Ginanjar T.G.\n\n\n\n");
+        String motto = ("Ayo, tuliskan keluh kesahmu dalam menjalani kehidupan kedalam aplikasi ini !");
 
         mText = new MutableLiveData<>();
-        mText.setValue(nim+nama+kelas);
+        mText.setValue(nama+versi+made+motto);
 
     }
 
