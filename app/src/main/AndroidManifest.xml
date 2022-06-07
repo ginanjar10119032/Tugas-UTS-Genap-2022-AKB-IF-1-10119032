@@ -10,17 +10,32 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TugasUTSGenap2022AKBIF110119032">
         <activity
+            android:name=".ui.dashboard.UpdateNotes"
+            android:exported="false" />
+        <activity
+            android:name=".ui.dashboard.LihatNotes"
+            android:exported="false" />
+        <activity
+            android:name=".ui.dashboard.BuatNotes"
+            android:exported="false" />
+        <activity
+            android:name=".ui.dashboard.DataHelper"
+            android:exported="false" />
+        <activity
+            android:name=".ui.dashboard.NotesManager"
+            android:exported="false" />
+        <activity
             android:name=".SplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name">
-        </activity>
+            android:label="@string/app_name" />
     </application>
 
 </manifest>
