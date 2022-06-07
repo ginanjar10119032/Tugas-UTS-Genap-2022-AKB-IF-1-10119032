@@ -1,5 +1,9 @@
 package com.example.tugasutsgenap2022akbif_110119032.ui.dashboard;
 
+//NIM     : 10119032
+//NAMA    : GINANJAR TUBAGUS GUMILAR
+//KELAS   : IF-1
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;

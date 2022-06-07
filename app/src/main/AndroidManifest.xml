@@ -10,20 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TugasUTSGenap2022AKBIF110119032">
         <activity
-            android:name=".ui.dashboard.UpdateNotes"
-            android:exported="false" />
-        <activity
-            android:name=".ui.dashboard.LihatNotes"
-            android:exported="false" />
-        <activity
-            android:name=".ui.dashboard.BuatNotes"
-            android:exported="false" />
-        <activity
-            android:name=".ui.dashboard.DataHelper"
-            android:exported="false" />
+            android:name=".ui.dashboard.AddNotesActivity"
+            android:exported="true" />
         <activity
             android:name=".ui.dashboard.NotesManager"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".SplashScreen"
             android:exported="true">

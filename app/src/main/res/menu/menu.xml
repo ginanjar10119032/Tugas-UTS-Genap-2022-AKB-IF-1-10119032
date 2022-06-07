@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!--    NIM     : 10119032-->
+<!--    NAMA    : GINANJAR TUBAGUS GUMILAR-->
+<!--    KELAS   : IF-1-->
+
 <menu xmlns:tools="http://schemas.android.com/tools"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    tools:context="com.example.sqlitenotesapp.MainActivity">
+    tools:context="com.example.tugasutsgenap2022akbif_110119032.ui.dashboard.AddNotesActivity">
     <item
         android:id="@+id/addNotes"
         android:icon="@android:drawable/ic_menu_add"
