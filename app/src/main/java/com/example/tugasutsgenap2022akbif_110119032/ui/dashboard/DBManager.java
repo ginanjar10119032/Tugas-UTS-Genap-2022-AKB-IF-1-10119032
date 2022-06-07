@@ -37,7 +37,7 @@ public class DBManager {
                 DatabaseHelper.ID, DatabaseHelper.SUBJECT, DatabaseHelper.DESC, DatabaseHelper.DATE
         };
         return sqLiteDatabase.query(DatabaseHelper.TABLE_NAME, columns, null, null, null, null
-                , null);
+        , null);
     }
 
     public void update(long id, String subject, String desc, String date) {

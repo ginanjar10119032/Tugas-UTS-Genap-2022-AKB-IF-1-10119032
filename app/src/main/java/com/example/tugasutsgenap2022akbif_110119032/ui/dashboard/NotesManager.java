@@ -11,14 +11,14 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.example.tugasutsgenap2022akbif_110119032.R;
-import com.example.tugasutsgenap2022akbif_110119032.databinding.ActivityNotesManagerBinding;
+import com.example.tugasutsgenap2022akbif_110119032.databinding.NotesManagerBinding;
 
 import java.util.ArrayList;
 
 public class NotesManager extends AppCompatActivity implements NoteClickListener, FetchDatabaseResults {
 
     private NotesAdapter notesAdapter;
-    ActivityNotesManagerBinding activityNotesManagerBinding;
+    NotesManagerBinding notesManagerBinding;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -29,18 +29,16 @@ public class NotesManager extends AppCompatActivity implements NoteClickListener
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        activityNotesManagerBinding = ActivityNotesManagerBinding.inflate(getLayoutInflater());
-        setContentView(activityNotesManagerBinding.getRoot());
+        notesManagerBinding = notesManagerBinding.inflate(getLayoutInflater());
+        setContentView(notesManagerBinding.getRoot());
 
         notesAdapter = new NotesAdapter(this);
         notesAdapter.setHasStableIds(true);
         notesAdapter.setNoteClickListener(this);
 
-
-
-        activityNotesManagerBinding.recyclerView.setHasFixedSize(true);
-        activityNotesManagerBinding.recyclerView.setAdapter(notesAdapter);
-        activityNotesManagerBinding.recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        notesManagerBinding.recycelrView.setHasFixedSize(true);
+        notesManagerBinding.recycelrView.setAdapter(notesAdapter);
+        notesManagerBinding.recycelrView.setLayoutManager(new LinearLayoutManager(this));
 
         AppPresenter appPresenter = new AppPresenter(this, this);
         appPresenter.requestNotesFromDatabase();
@@ -68,9 +66,9 @@ public class NotesManager extends AppCompatActivity implements NoteClickListener
     @Override
     public void onDataFetched(ArrayList<NotesModel> notesModelArrayList) {
         if (notesModelArrayList.isEmpty()) {
-            activityNotesManagerBinding.emptyMsg.setVisibility(View.VISIBLE);
+            notesManagerBinding.emptyMsg.setVisibility(View.VISIBLE);
         } else {
-            activityNotesManagerBinding.emptyMsg.setVisibility(View.GONE);
+            notesManagerBinding.emptyMsg.setVisibility(View.GONE);
         }
         notesAdapter.setNotesList(notesModelArrayList);
     }
