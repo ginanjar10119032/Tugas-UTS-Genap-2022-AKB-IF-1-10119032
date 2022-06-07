@@ -16,11 +16,11 @@
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" />
 
-    <fragment
+    <activity
         android:id="@+id/navigation_dashboard"
-        android:name="com.example.tugasutsgenap2022akbif_110119032.ui.dashboard.DashboardFragment"
+        android:name="com.example.tugasutsgenap2022akbif_110119032.ui.dashboard.NotesManager"
         android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/activity_notes_manager" />
 
     <fragment
         android:id="@+id/navigation_notifications"

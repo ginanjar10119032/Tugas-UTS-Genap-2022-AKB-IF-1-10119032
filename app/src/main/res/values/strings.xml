@@ -3,4 +3,13 @@
     <string name="title_home">Profile</string>
     <string name="title_dashboard">Notes</string>
     <string name="title_notifications">Info</string>
+    <string name="empty"> Tambahkan Notes Baru </string>
+    <string name="masukkan_judul">Masukkan Judul</string>
+    <string name="masukkan_deskripsi">Masukkan Deskripsi</string>
+    <string name="hapus">Hapus</string>
+    <string name="add_note">Add Note</string>
+    <string name="update">Update</string>
+    <string name="masukkan_catatan">Masukkan Catatan</string>
+    <string name="judul">Judul</string>
+    <string name="deskripsi">Deskripsi</string>
 </resources>

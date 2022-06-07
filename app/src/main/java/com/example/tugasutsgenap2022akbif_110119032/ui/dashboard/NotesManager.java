@@ -1,97 +1,77 @@
 package com.example.tugasutsgenap2022akbif_110119032.ui.dashboard;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
+import androidx.recyclerview.widget.LinearLayoutManager;
+
 import android.content.Intent;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.ListView;
-import com.example.tugasutsgenap2022akbif_110119032.R;
 
-public class NotesManager extends AppCompatActivity {
-    String[] daftar;
-    ListView ListView01;
-    Menu menu;
-    protected Cursor cursor;
-    DataHelper dbcenter;
-    public static NotesManager ma;
+import com.example.tugasutsgenap2022akbif_110119032.R;
+import com.example.tugasutsgenap2022akbif_110119032.databinding.ActivityNotesManagerBinding;
+
+import java.util.ArrayList;
+
+public class NotesManager extends AppCompatActivity implements NoteClickListener, FetchDatabaseResults {
+
+    private NotesAdapter notesAdapter;
+    ActivityNotesManagerBinding activityNotesManagerBinding;
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        activityNotesManagerBinding = ActivityNotesManagerBinding.inflate(getLayoutInflater());
+        setContentView(activityNotesManagerBinding.getRoot());
 
-        Button btn=(Button)findViewById(R.id.button2);
-
-        btn.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View arg0) {
-                // TODO Auto-generated method stub
-                Intent inte = new Intent(NotesManager.this, BuatNotes.class);
-                startActivity(inte);
-            }
-        });
+        notesAdapter = new NotesAdapter(this);
+        notesAdapter.setHasStableIds(true);
+        notesAdapter.setNoteClickListener(this);
 
 
-        ma = this;
-        dbcenter = new DataHelper(this);
-        RefreshList();
+
+        activityNotesManagerBinding.recyclerView.setHasFixedSize(true);
+        activityNotesManagerBinding.recyclerView.setAdapter(notesAdapter);
+        activityNotesManagerBinding.recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        AppPresenter appPresenter = new AppPresenter(this, this);
+        appPresenter.requestNotesFromDatabase();
     }
 
-    public void RefreshList(){
-        SQLiteDatabase db = dbcenter.getReadableDatabase();
-        cursor = db.rawQuery("SELECT * FROM notes",null);
-        daftar = new String[cursor.getCount()];
-        cursor.moveToFirst();
-        for (int cc=0; cc < cursor.getCount(); cc++){
-            cursor.moveToPosition(cc);
-            daftar[cc] = cursor.getString(1).toString();
+    @Override
+    public void onNoteClicked(int rowId, String subject, String description) {
+        Intent intent = new Intent(this, AddNotesActivity.class);
+        intent.putExtra("rowId", rowId);
+        intent.putExtra("subject", subject);
+        intent.putExtra("description", description);
+
+        startActivity(intent);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.addNotes) {
+            startActivity(new Intent(this, AddNotesActivity.class));
         }
-        ListView01 = (ListView)findViewById(R.id.listView1);
-        ListView01.setAdapter(new ArrayAdapter(this, android.R.layout.simple_list_item_1, daftar));
-        ListView01.setSelected(true);
-        ListView01.setOnItemClickListener(new OnItemClickListener() {
-
-
-            public void onItemClick(AdapterView arg0, View arg1, int arg2, long arg3) {
-                final String selection = daftar[arg2]; //.getItemAtPosition(arg2).toString();
-                final CharSequence[] dialogitem = {"Lihat Notes", "Update Notes", "Hapus Notes"};
-                AlertDialog.Builder builder = new AlertDialog.Builder(NotesManager.this);
-                builder.setTitle("Pilihan");
-                builder.setItems(dialogitem, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int item) {
-                        switch(item){
-                            case 0 :
-                                Intent i = new Intent(getApplicationContext(), LihatNotes.class);
-                                i.putExtra("nama", selection);
-                                startActivity(i);
-                                break;
-                            case 1 :
-                                Intent in = new Intent(getApplicationContext(), UpdateNotes.class);
-                                in.putExtra("nama", selection);
-                                startActivity(in);
-                                break;
-                            case 2 :
-                                SQLiteDatabase db = dbcenter.getWritableDatabase();
-                                db.execSQL("delete from notes where nama = '"+selection+"'");
-                                RefreshList();
-                                break;
-                        }
-                    }
-                });
-                builder.create().show();
-            }});
-        ((ArrayAdapter)ListView01.getAdapter()).notifyDataSetInvalidated();
+        return super.onOptionsItemSelected(item);
     }
 
-
+    @Override
+    public void onDataFetched(ArrayList<NotesModel> notesModelArrayList) {
+        if (notesModelArrayList.isEmpty()) {
+            activityNotesManagerBinding.emptyMsg.setVisibility(View.VISIBLE);
+        } else {
+            activityNotesManagerBinding.emptyMsg.setVisibility(View.GONE);
+        }
+        notesAdapter.setNotesList(notesModelArrayList);
+    }
 }

@@ -6,6 +6,7 @@
         <entry key="..\:/STUFF/SCHOOL STUFF/KULIAH/SEMESTER 6/AKB/UTS_AKB/Tugas-UTS-Genap-2022-AKB-IF-1-10119032/app/src/main/res/drawable/ic_baseline_face_24.xml" value="0.2555" />
         <entry key="..\:/STUFF/SCHOOL STUFF/KULIAH/SEMESTER 6/AKB/UTS_AKB/Tugas-UTS-Genap-2022-AKB-IF-1-10119032/app/src/main/res/drawable/ic_baseline_info_24.xml" value="0.2555" />
         <entry key="..\:/STUFF/SCHOOL STUFF/KULIAH/SEMESTER 6/AKB/UTS_AKB/Tugas-UTS-Genap-2022-AKB-IF-1-10119032/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.2555" />
+        <entry key="..\:/STUFF/SCHOOL STUFF/KULIAH/SEMESTER 6/AKB/UTS_AKB/Tugas-UTS-Genap-2022-AKB-IF-1-10119032/app/src/main/res/layout/activity_add_notes.xml" value="0.25" />
         <entry key="..\:/STUFF/SCHOOL STUFF/KULIAH/SEMESTER 6/AKB/UTS_AKB/Tugas-UTS-Genap-2022-AKB-IF-1-10119032/app/src/main/res/layout/activity_buat_notes.xml" value="0.12107396149949341" />
         <entry key="..\:/STUFF/SCHOOL STUFF/KULIAH/SEMESTER 6/AKB/UTS_AKB/Tugas-UTS-Genap-2022-AKB-IF-1-10119032/app/src/main/res/layout/activity_lihat_notes.xml" value="0.12107396149949341" />
         <entry key="..\:/STUFF/SCHOOL STUFF/KULIAH/SEMESTER 6/AKB/UTS_AKB/Tugas-UTS-Genap-2022-AKB-IF-1-10119032/app/src/main/res/layout/activity_main.xml" value="0.25" />
@@ -15,7 +16,9 @@
         <entry key="..\:/STUFF/SCHOOL STUFF/KULIAH/SEMESTER 6/AKB/UTS_AKB/Tugas-UTS-Genap-2022-AKB-IF-1-10119032/app/src/main/res/layout/fragment_dashboard.xml" value="0.25" />
         <entry key="..\:/STUFF/SCHOOL STUFF/KULIAH/SEMESTER 6/AKB/UTS_AKB/Tugas-UTS-Genap-2022-AKB-IF-1-10119032/app/src/main/res/layout/fragment_home.xml" value="0.25" />
         <entry key="..\:/STUFF/SCHOOL STUFF/KULIAH/SEMESTER 6/AKB/UTS_AKB/Tugas-UTS-Genap-2022-AKB-IF-1-10119032/app/src/main/res/layout/fragment_notifications.xml" value="0.25" />
+        <entry key="..\:/STUFF/SCHOOL STUFF/KULIAH/SEMESTER 6/AKB/UTS_AKB/Tugas-UTS-Genap-2022-AKB-IF-1-10119032/app/src/main/res/layout/notes_layout.xml" value="0.25" />
         <entry key="..\:/STUFF/SCHOOL STUFF/KULIAH/SEMESTER 6/AKB/UTS_AKB/Tugas-UTS-Genap-2022-AKB-IF-1-10119032/app/src/main/res/menu/bottom_nav_menu.xml" value="0.25" />
+        <entry key="..\:/STUFF/SCHOOL STUFF/KULIAH/SEMESTER 6/AKB/UTS_AKB/Tugas-UTS-Genap-2022-AKB-IF-1-10119032/app/src/main/res/menu/three_menu.xml" value="0.25" />
       </map>
     </option>
   </component>
